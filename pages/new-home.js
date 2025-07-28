@@ -4,6 +4,7 @@ export function init() {
   imageEntrance();
   offreHover();
   preloader();
+  setAllParallax();
 }
 
 /////// INSERER LE SVG ET GERER LES EFFETS AU HOVER /////////////////
@@ -110,7 +111,6 @@ function mapPinHover() {
 }
 
 //// COMPORTEMENT DES IMAGES /////
-
 //// ENTREE TYPE PHOTO JETEE SUR UNE TABLE
 function imageEntrance() {
   const $images = $("[data-image-entrance]");
@@ -329,4 +329,31 @@ function preloader() {
     },
     "-=0.5"
   );
+}
+
+
+/////// PARALLAX ///////////
+function setAllParallax() {
+
+      const $parallaxElements = $('[data-parallax-speed]');
+
+
+      $parallaxElements.each(function () {
+        const $el = $(this);
+        // const speed = parseFloat($el.data('parallax-speed')) || 0;
+         const speed = $el.data('parallax-speed');
+
+        gsap.to($el, {
+          scrollTrigger: {
+            trigger: $el,
+            start: "top 70%",
+            end: "bottom top",
+            scrub: true,
+          },
+          yPercent: speed,
+          ease: "none",
+          overwrite: true // évite l'accumulation d'animations
+        });
+      });
+
 }

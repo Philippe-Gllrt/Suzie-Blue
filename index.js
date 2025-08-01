@@ -9,7 +9,7 @@ async function loadPageScript() {
 
   try {
     // const module = await import(`./pages/${page}.js`);
-    const module = await import(`https://cdn.jsdelivr.net/gh/Philippe-Gllrt/Suzie-Blue@latest/pages/${page}.js`);
+    const module = await import(`https://cdn.jsdelivr.net/gh/Philippe-Gllrt/Suzie-Blue/pages/${page}.js`);
     if (module.init) {
       module.init(); // Convention: chaque module exporte `init()`
     } else {

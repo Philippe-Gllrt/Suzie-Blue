@@ -8,7 +8,8 @@ async function loadPageScript() {
   console.log(`Chargement du script pour la page: ${page}`);
 
   try {
-    const module = await import(`./pages/${page}.js`);
+    // const module = await import(`./pages/${page}.js`);
+    const module = await import(`https://cdn.jsdelivr.net/gh/Philippe-Gllrt/Suzie-Blue@latest/pages/${page}.js`);
     if (module.init) {
       module.init(); // Convention: chaque module exporte `init()`
     } else {
@@ -20,3 +21,4 @@ async function loadPageScript() {
 }
 
 document.addEventListener("DOMContentLoaded", loadPageScript);
+https://cdn.jsdelivr.net/gh/Philippe-Gllrt/Suzie-Blue@latest/pages/

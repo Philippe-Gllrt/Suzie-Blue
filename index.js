@@ -21,4 +21,3 @@ async function loadPageScript() {
 }
 
 document.addEventListener("DOMContentLoaded", loadPageScript);
-https://cdn.jsdelivr.net/gh/Philippe-Gllrt/Suzie-Blue@latest/pages/
